@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <!--GOOGLE SIGN IN IS NOT NEEDED IN THE LOCAL VERSION-->
+  <!-- Needed for Google Sign in -->
+  <!--<meta name="google-signin-client_id" content="447225410809-rg1rtffm75aqqci9ngboei00bopnjvlr.apps.googleusercontent.com">-->
+  <title>Admin - Travel Tips</title>
+  <!-- Tells browser how to handel scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Link to bootstrap css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  <!-- Smooth scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navbar Code -->
+  <nav class="navbar navbar-inverse">
+    <!-- Navbar is collapsable when width is narrow enough -->
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class = "container-fluid">
+      <div class = navbar-header>
+        <!-- Website Name -->
+        <a class = "navbar-brand" href="#">Travel Tips</a>
+      </div>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <!-- Links to pages -->
+        <ul class="nav navbar-nav">
+          <li><a href="./index.html">Search for Countries</a></li>
+          <!-- Current Page -->
+          <li class="active"><a href="./admin.html">Admin</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!--GOOGLE SIGN IN IS NOT NEEDED IN THE LOCAL VERSION-->
+    <!-- Needed for Google Sign in -->
+    <!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
+    <!--<div class="g-signin2"  data-onsuccess="onSignIn"></div>-->
+    <!--<br>-->
+
+    <div id='welcome'>
+      <!-- This paragraph will be replaced once the user is signed in -->
+      <p>Sign in with an administrator account to remove/edit posts and view users!</p>
+    </div>
+
+    <hr>
+
+    <!-- Remove/Edit Posts Section -->
+    <h1>Remove/Edit Posts</h1>
+    <h5>Start typing the name of a country in the text box below and select a county from the list to select a post.</h5>
+    <p></p>
+
+    <!-- Form to allow user to enter country name -->
+    <form action ='./country' method='get' id='get_country'>
+      <div> Country Name: <input type='text' name='country_name' id='country_name'></div>
+    </form>
+
+    <h3> Select Country </h3>
+    <!-- Split page into 2 (if it is wide enough, otherwise stack) -->
+    <div class="row" id = "locations">
+      <!-- Empty div to display errors if needed -->
+      <div id='locationserror'></div>
+
+      <!-- Left column -->
+      <!-- Each list-group has content once a country is selected -->
+      <div class="col-md-6">
+        <div class="list-group" id="locations0"><h5>Enter a country in the box above to remove/edit a post.</h5></div>
+        <div class="list-group" id="locations1"> </div>
+        <div class="list-group" id="locations2"> </div>
+        <div class="list-group" id="locations3"> </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-md-6">
+        <div class="list-group" id="locations4"> </div>
+        <div class="list-group" id="locations5"> </div>
+        <div class="list-group" id="locations6"> </div>
+        <div class="list-group" id="locations7"> </div>
+      </div>
+
+    </div>
+
+    <div>
+      <hr>
+      <!-- Empty until country is selected -->
+      <div id="selected"></div>
+      <div id='postalert'></div>
+      <div id='commentintro'></div>
+      <div id='comment'></div>
+      <!-- Scrolls to this point -->
+      <div id='scroll'></div>
+
+    </div>
+
+    <!-- View Users Section -->
+    <div id=allusers>
+      <h1>View All Users</h1>
+      <h5>Press this button to generate a list of users.</h5>
+      <p></p>
+
+      <div id='userserror'></div>
+      <button id='viewusers'>View Users</button>
+      <div id='scrollusers'></div>
+    </div>
+
+    <!-- Connect to main JS file -->
+    <script src="admin.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </div>
+
+</body>
+
+</html>
